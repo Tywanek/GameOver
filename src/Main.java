@@ -4,6 +4,7 @@ public class Main {
         System.out.println("Hello World!");
 
         Game game = new Game();
+        game.getUserName();
         game.getUserNumber();
         game.drawRandomNumber();
         game.startTheGame();
