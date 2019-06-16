@@ -23,22 +23,23 @@ public class Game {
     public void drawRandomNumber() {
         Random random = new Random();
         this.randomNumber = random.nextInt(RANDOM_BOUND);
-        System.out.println("Random number:" + randomNumber);
     }
 
     public void startTheGame() {
         if (userNumber > randomNumber) {
             System.out.println("Za dużo");
-            getUserNumber();
-            startTheGame();
+            newShoot();
         } else if (userNumber < randomNumber) {
             System.out.println("Za malo");
-            getUserNumber();
-            startTheGame();
+            newShoot();
         } else {
-            System.out.println(userName +" you won!");
-            System.out.println("In "+shotCounter + " strikes");
-
+            System.out.println(userName + " you won!");
+            System.out.println("In " + shotCounter + " strikes");
         }
+    }
+
+    private void newShoot() {
+        getUserNumber();
+        startTheGame();
     }
 }
